@@ -188,7 +188,7 @@ while game_flag is True:
         if bet.isalpha() is True:
             message = 'Last Bet Was Invalid.'
         elif float(bet) > pot:
-            message = 'Last Bet Was Too High.'
+            message = 'Last Bet Was Too High.Try again.'
         else:
             bet = float(bet)
             valid_bet = True
