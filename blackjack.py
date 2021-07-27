@@ -30,7 +30,7 @@ class dealer_deck:
                 self.deck.append((suit , rank))
     def shuffle_deck(self):
         system("cls")
-        print("Dealer Shuffling")
+        print("The Dealer is shuffling...")
         random.shuffle(self.deck)
     def deal_a_card(self):
         card_deal = self.deck.pop()
@@ -79,7 +79,7 @@ def game_state(player_cond, dealer_cond):
     score = dealer_hand.get_score()
     bust = dealer_hand.bust_check()
     if dealer_hand.bj_check() is True and dealer_cond is False:
-        print("Dealer Has Blackjack")
+        print("Uh Oh! The Dealer has BlackJack!")
     elif (dealer_cond is False and dealer_hand.ace is True and bust is False and score + 10 < 22):
         print("Total: " + str(score) + "or" + str(score + 10))
     elif dealer_cond is False:
@@ -89,7 +89,7 @@ def game_state(player_cond, dealer_cond):
     score = plyr_hand.get_score()
     plyr_hand.bust_check()
     if plyr_hand.bj_check() is True:
-        print("You have Blackjack")
+        print("Congrats! You have Blackjack!!")
     elif plyr_hand.ace is True and bust is False and score + 10 < 22:
         print("Total: " + str(score) + "or" + str(score + 10))
     else:
