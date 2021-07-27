@@ -147,7 +147,7 @@ def win_check(pot, blackjack):
         pot += float(bet)
     else:
         winner = "Draw"
-        print("Player and Dealer Draw")
+        print("Player and Dealer draw")
     if winner != "Draw":
         print("{} wins this hand".format(winner))
     return pot 
@@ -167,7 +167,7 @@ card_deck.create_deck()
 card_deck.shuffle_deck()
 
 game_flag = True
-pot = 200.00
+pot = 300.00
 
 while game_flag is True:
     valid_bet = False
