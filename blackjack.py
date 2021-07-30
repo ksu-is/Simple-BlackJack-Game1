@@ -167,7 +167,7 @@ card_deck.create_deck()
 card_deck.shuffle_deck()
 
 game_flag = True
-pot = 300.00
+pot = 500.00
 
 while game_flag is True:
     valid_bet = False
@@ -182,13 +182,13 @@ while game_flag is True:
             card_deck.shuffle_deck()
 
         system('cls')
-        print(f'Cash Pot is £{pot:.2f} {message}')
+        print(f'Cash Pot is ${pot:.2f} {message}')
         bet = input('Please Place Your Bet: ')
 
         if bet.isalpha() is True:
             message = 'Last Bet Was Invalid.'
         elif float(bet) > pot:
-            message = 'Last Bet Was Too High.Try again.'
+            message = 'Last Bet Was Too High. Try again.'
         else:
             bet = float(bet)
             valid_bet = True
@@ -205,13 +205,15 @@ while game_flag is True:
     else:
         dealer_turn()
     
-    pot = win_check(pot, blackjack)
+ pot = win_check(pot, blackjack)
     another_game = input("Would you Like to play Another Game? (Y/N)")
     if another_game.lower() == 'n':
         game_flag = False
     elif pot <= 0.00:
-        print("Game Over! No Money Left!")
-        game_flag = False
+        rebuy_game = input ("Oh no! You are out of money! Would you like to to Rebuy in? Y/N")
+        if rebuy_game.lower() == 'y':
+            pot += float(200)
+            continue
+
     else:
         continue
-
